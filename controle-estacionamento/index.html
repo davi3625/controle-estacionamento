@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema demonstrativo de controle de estacionamento condominial.">
+    <title>ParkControl | Reservas</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/model.js" defer></script>
+    <script src="./js/controller.js" defer></script>
+    <script src="./js/app.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="./index.html" aria-label="ParkControl - página inicial">ParkControl</a>
+        <nav aria-label="Navegação principal">
+            <a class="active" href="./index.html" aria-current="page">Reservas</a>
+            <a href="./disponiveis.html">Vagas</a>
+            <a class="nav-button" href="./cadastro.html">+ Nova reserva</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">GESTÃO CONDOMINIAL</p>
+                <h1>Controle de estacionamento</h1>
+                <p class="muted">Gerencie as reservas das vagas do condomínio.</p>
+            </div>
+            <a class="button primary" href="./cadastro.html">+ Cadastrar reserva</a>
+        </section>
+
+        <section class="stats" aria-label="Resumo do estacionamento">
+            <article class="stat-card">
+                <span>Total de vagas</span>
+                <strong id="totalVagas">20</strong>
+            </article>
+            <article class="stat-card">
+                <span>Vagas ocupadas</span>
+                <strong id="vagasOcupadas">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Vagas disponíveis</span>
+                <strong id="vagasLivres">20</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Reservas cadastradas</h2>
+                    <p class="muted">Consulte, pesquise e gerencie os veículos registrados.</p>
+                </div>
+                <label class="search-label">
+                    <span class="sr-only">Buscar reservas</span>
+                    <input type="search" id="busca" placeholder="Buscar placa, nome ou vaga..." autocomplete="off">
+                </label>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vaga</th>
+                            <th>Veículo</th>
+                            <th>Proprietário</th>
+                            <th>Apartamento</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaReservas"></tbody>
+                </table>
+            </div>
+            <p id="mensagemVazia" class="empty-state" hidden>Nenhuma reserva encontrada.</p>
+        </section>
+
+        <p class="footer-note">ParkControl · Sistema demonstrativo de estacionamento</p>
+    </main>
+</body>
+</html>

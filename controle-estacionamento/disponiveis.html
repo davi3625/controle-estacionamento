@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualização das vagas livres e ocupadas.">
+    <title>ParkControl | Vagas</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/model.js" defer></script>
+    <script src="./js/controller.js" defer></script>
+    <script src="./js/app.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="./index.html" aria-label="ParkControl - página inicial">ParkControl</a>
+        <nav aria-label="Navegação principal">
+            <a href="./index.html">Reservas</a>
+            <a class="active" href="./disponiveis.html" aria-current="page">Vagas</a>
+            <a class="nav-button" href="./cadastro.html">+ Nova reserva</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">VISÃO GERAL</p>
+                <h1>Disponibilidade das vagas</h1>
+                <p class="muted">Consulte quais vagas estão livres ou ocupadas.</p>
+            </div>
+            <a class="button primary" href="./cadastro.html">+ Nova reserva</a>
+        </section>
+
+        <section class="stats" aria-label="Resumo do estacionamento">
+            <article class="stat-card">
+                <span>Total de vagas</span>
+                <strong id="totalVagas">20</strong>
+            </article>
+            <article class="stat-card">
+                <span>Vagas ocupadas</span>
+                <strong id="vagasOcupadas">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Vagas disponíveis</span>
+                <strong id="vagasLivres">20</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Mapa de vagas</h2>
+                    <p class="muted">Selecione uma vaga para consultar seu estado.</p>
+                </div>
+            </div>
+
+            <div class="legend">
+                <span><i class="legend-dot available"></i> Disponível</span>
+                <span><i class="legend-dot occupied"></i> Ocupada</span>
+            </div>
+            <div id="mapaVagas" class="parking-grid"></div>
+            <p id="detalheVaga" class="vacancy-detail" aria-live="polite">
+                Selecione uma vaga para ver os detalhes.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
